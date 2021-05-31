@@ -63,7 +63,7 @@ def generate_actions(links: Sequence[Link]) -> Sequence[Action]:
     actions: List[Action] = []
     for link in links:
         for dest in link.dests:
-            if dest.exists():
+            if dest.exists() or dest.is_symlink():
                 if dest.resolve() != link.src:
                     actions.append(RemoveFile(dest))
                     actions.append(CreateLink(link.src, dest))
