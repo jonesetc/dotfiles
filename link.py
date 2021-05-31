@@ -64,12 +64,14 @@ def generate_actions(links: Sequence[Link]) -> Sequence[Action]:
     for link in links:
         for dest in link.dests:
             if dest.exists():
-                actions.append(RemoveFile(dest))
+                if dest.resolve() != link.src:
+                    actions.append(RemoveFile(dest))
+                    actions.append(CreateLink(link.src, dest))
             else:
                 for parent in reversed(dest.parents):
                     if not parent.exists():
                         actions.append(CreateDirectory(parent))
-            actions.append(CreateLink(link.src, dest))
+                actions.append(CreateLink(link.src, dest))
 
     return actions
 
@@ -126,7 +128,7 @@ if __name__ == "__main__":
         "-d",
         "--dry-run",
         action="store_true",
-        help="don't execute, just print actions that would be executed",
+        help="don't execute, just print actions that would be executed and quit",
     )
     parser.add_argument(
         "-f",
