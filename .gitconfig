@@ -1,0 +1,13 @@
+[user]
+	name = kyle jones
+	email = kyle@jonesetc.com
+[core]
+	editor = code --wait --disable-extensions
+[init]
+        defaultBranch = main
+[alias]
+        co = checkout
+        br = branch
+        ci = commit
+        st = status
+		last = log -1 HEAD
