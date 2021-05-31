@@ -112,6 +112,9 @@ NAMED_LINKS = {
     "editorconfig": [
         Link(SRC_DIR / ".editorconfig", [HOME_DIR / ".editorconfig"]),
     ],
+    "alacritty": [
+        Link(SRC_DIR / "alacritty.yml", [USER_XDG_DIR / "alacritty/alacritty.yml"]),
+    ],
 }
 
 
