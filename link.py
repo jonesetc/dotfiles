@@ -83,7 +83,8 @@ USER_XDG_DIR = (
     if "XDG_CONFIG_HOME" in environ
     else HOME_DIR / ".config"
 )
-SYSTEM_XDG_DIR = Path("/etc/xdg")
+ETC_DIR = Path("/etc")
+SYSTEM_XDG_DIR = ETC_DIR / "xdg"
 
 NAMED_LINKS = {
     "bash": [
@@ -114,6 +115,10 @@ NAMED_LINKS = {
     ],
     "alacritty": [
         Link(SRC_DIR / "alacritty.yml", [USER_XDG_DIR / "alacritty/alacritty.yml"]),
+    ],
+    "containers": [
+        Link(SRC_DIR / "registries.conf", [ETC_DIR / "containers/registries.conf"]),
+        Link(SRC_DIR / "nodocker", [ETC_DIR / "containers/nodocker"]),
     ],
 }
 

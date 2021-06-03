@@ -29,6 +29,10 @@ HISTSIZE=1000000
 HISTCONTROL=ignoreboth
 HISTIGNORE='ls:bg:fg:history'
 
+# Set up aliases
+alias vim=nvim
+alias docker=podman
+
 # Set up pager
 export LESS="-iMFXR"
 export PAGER="less"
@@ -49,6 +53,7 @@ export GROFF_NO_SGR=1
 
 # Set up editor
 export EDITOR=nvim
+export VISUAL=nvim
 
 # Set up path modifications
 export PATH="$PATH:/home/kyle/.local/bin"
