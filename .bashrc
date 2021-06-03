@@ -56,4 +56,11 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 # Set up path modifications
-export PATH="$PATH:/home/kyle/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
+
+# Set up direnv
+eval "$(direnv hook bash)"
+
+# Set up sdkman, which demands to be at the end, cool
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

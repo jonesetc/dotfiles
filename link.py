@@ -120,6 +120,9 @@ NAMED_LINKS = {
         Link(SRC_DIR / "registries.conf", [ETC_DIR / "containers/registries.conf"]),
         Link(SRC_DIR / "nodocker", [ETC_DIR / "containers/nodocker"]),
     ],
+    "sdkman": [
+        Link(SRC_DIR / "sdkman.conf", [HOME_DIR / ".sdkman/etc/config"]),
+    ],
 }
 
 
