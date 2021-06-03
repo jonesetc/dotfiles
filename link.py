@@ -5,7 +5,7 @@ from itertools import chain
 from os import environ, getenv, mkdir, remove, symlink
 from pathlib import Path
 from sys import exit
-from typing import List, Protocol, Sequence
+from typing import Iterable, List, Protocol, Sequence
 
 
 @dataclass
@@ -59,7 +59,7 @@ class RemoveFile:
         print(f"removed existing file {self.file}")
 
 
-def generate_actions(links: Sequence[Link]) -> Sequence[Action]:
+def generate_actions(links: Iterable[Link]) -> Sequence[Action]:
     actions: List[Action] = []
     for link in links:
         for dest in link.dests:
