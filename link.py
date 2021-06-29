@@ -123,6 +123,9 @@ NAMED_LINKS = {
     "sdkman": [
         Link(SRC_DIR / "sdkman.conf", [HOME_DIR / ".sdkman/etc/config"]),
     ],
+    "pacman": [
+        Link(SRC_DIR / "pacman.conf", [ETC_DIR / "pacman.conf"]),
+    ],
 }
 
 
