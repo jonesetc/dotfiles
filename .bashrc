@@ -6,6 +6,7 @@ alias ls='ls --color=auto --human-readable'
 
 # Set up pyenv
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 # Set up poetry
 export PATH="$HOME/.poetry/bin:$PATH"
 # Set up pipx

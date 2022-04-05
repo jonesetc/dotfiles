@@ -21,8 +21,15 @@ min_time = 0
 show_milliseconds = true
 format = "[$duration]($style)"
 
-[directory]
-truncate_to_repo = false
-
 [git_branch]
 format = "[$symbol$branch]($style) "
+
+[username]
+format = "[$user]($style) "
+
+[hostname]
+format = "on [$hostname]($style) "
+
+[directory]
+truncate_to_repo = false
+format = "in [$path]($style)[$read_only]($read_only_style) "

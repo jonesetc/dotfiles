@@ -1,13 +1,19 @@
 [user]
-	name = kyle jones
-	email = kyle@jonesetc.com
+        name = kyle jones
+        email = kyle@jonesetc.com
 [core]
-	editor = code --wait --disable-extensions
+        editor = code --wait --disable-extensions
 [init]
         defaultBranch = main
+[push]
+        default = current
 [alias]
         co = checkout
         br = branch
         ci = commit
-        st = status
-		last = log -1 HEAD
+	st = status
+        unstage = reset HEAD --
+        pp = pull --prune
+        last = log -1 HEAD
+        root = rev-parse --show-toplevel
+        remove-missing-upstream = "! git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D"
