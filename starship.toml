@@ -6,6 +6,7 @@ format = """\
     $git_commit\
     $git_state\
     $git_status\
+    $fill\
     $line_break\
     $cmd_duration\
     $character\
