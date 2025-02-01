@@ -1,0 +1,36 @@
+format = """\
+    $username\
+    $hostname\
+    $directory\
+    $git_branch\
+    $git_commit\
+    $git_state\
+    $git_status\
+    $fill\
+    $line_break\
+    $cmd_duration\
+    $line_break\
+    $character\
+    """
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[X](bold red)"
+
+[cmd_duration]
+min_time = 0
+show_milliseconds = true
+format = "[$duration]($style)"
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+
+[username]
+format = "[$user]($style) "
+
+[hostname]
+format = "on [$hostname]($style) "
+
+[directory]
+truncate_to_repo = false
+format = "in [$path]($style)[$read_only]($read_only_style) "
